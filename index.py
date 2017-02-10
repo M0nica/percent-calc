@@ -7,7 +7,7 @@ def hello():
     return render_template('entry.html')
 
 @app.route("/entry", methods=['POST'])
-def echo():
+def calculate():
     original_number = request.form['original']
     new_number = request.form['new']
     result = ((int(new_number) - int(original_number))/int(original_number)) * 100
