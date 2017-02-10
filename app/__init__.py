@@ -9,10 +9,18 @@ def hello():
 
 @app.route("/entry", methods=['POST'])
 def calculate():
-    original_number = request.form['original']
-    new_number = request.form['new']
-    result = ((int(new_number) - int(original_number))/int(original_number)) * 100
-    response =  "The percent change between " + original_number + " and " + new_number + " is " + str("%.0f%%" % result)
+    # original_number = request.form['original']
+    # new_number = request.form['new']
+    # result = ((int(new_number) - int(original_number))/int(original_number)) * 100
+    # response =  "The percent change between " + original_number + " and " + new_number + " is " + str("%.0f%%" % result)
+
+
+    original_number = int(request.form['original'])
+    new_number = int(request.form['new'])
+    #result = ((int(new_number) - int(original_number))/int(original_number)) * 100
+    result = ((new_number - original_number)/int(original_number)) * 100
+    response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("%.0f%%" % result)
+
 
 
     return render_template('result.html',
