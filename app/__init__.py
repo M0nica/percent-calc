@@ -31,7 +31,7 @@ def results(x, y):
 
     # response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("{:.2%}".format(result))
     result = str("{:.2%}".format(result_unf))
-    return render_template('results.html', x=x,y=y,result=result)
+    return render_template('results.html', x=int(x),y=int(y),result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
