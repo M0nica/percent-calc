@@ -21,7 +21,7 @@ def calculate():
     result = float((new_number - original_number)/(original_number))
     #result = ((new_number - original_number)/int(original_number))
     #response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("%.0f%%" % result)
-    response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("{:.2%}".format(result)) + "the output result without formatting was " + str(result)
+    response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("{:.2%}".format(result)) 
     #response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str('{:.0%}'.format(result))
 
     return render_template('result.html',
