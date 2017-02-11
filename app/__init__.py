@@ -27,7 +27,7 @@ def results(x, y):
     x = float(x)
     y = float(y)
 
-    result_unf = float((x-y)/(y))
+    result_unf = float((y-x)/(x))
 
     # response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("{:.2%}".format(result))
     result = str("{:.2%}".format(result_unf))
