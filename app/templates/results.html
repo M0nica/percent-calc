@@ -6,9 +6,13 @@
 
 {% if result == "0.00%" %}
   <p> These numbers are the same so the percent change is 0% </p>
+<!-- if the percentage change is not 0.00 and is not negative -->   
 {% elif '-' not in result %}
   <p>The percent change between {{ x }} and {{ y }} is {{ result }} increase. </p>
+
+  <!-- if the percentage is negative -->
 {% else %}
+  <!-- print out the result percentage without the - sign in front -->
   <p>The percent change between {{ x }} and {{ y }} is {{ result[1:] }} decrease. </p>
 {% endif %}
   <h3> Original Number</h3>
