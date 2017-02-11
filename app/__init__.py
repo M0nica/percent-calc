@@ -15,8 +15,8 @@ def calculate():
     # response =  "The percent change between " + original_number + " and " + new_number + " is " + str("%.0f%%" % result)
 
 
-    original_number = int(request.form['original'])
-    new_number = int(request.form['new'])
+    original_number = float(request.form['original'])
+    new_number = float(request.form['new'])
     #result = ((int(new_number) - int(original_number))/int(original_number)) * 100
     result = float((new_number - original_number)/(original_number))
     #result = ((new_number - original_number)/int(original_number))
