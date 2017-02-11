@@ -33,5 +33,9 @@ def results(x, y):
     result = str("{:.2%}".format(result_unf))
     return render_template('results.html', x=int(x),y=int(y),result=result)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == '__main__':
     app.run(debug=True)
