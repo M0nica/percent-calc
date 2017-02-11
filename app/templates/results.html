@@ -2,8 +2,13 @@
 {% block content %}
 <form action="/entry" method="POST">
 <!-- {{ response }} -->
-<p>The percent change between {{ x }} and {{ y }} is {{ result }}</p>
 
+
+{% if result == "0.00%" %}
+  <p> These numbers are the same so the percent change is 0% </p>
+{% else %}
+  <p>The percent change between {{ x }} and {{ y }} is {{ result }}</p>
+{% endif %}
   <h3> Original Number</h3>
 
 <input name="original" type="number" min="1" step="any" required>
