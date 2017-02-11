@@ -8,30 +8,39 @@ def hello():
     return render_template('entry.html')
 
 @app.route("/entry", methods=['POST'])
+
+
 def calculate():
-    original_number = int(request.form['original'])
-    new_number = int(request.form['new'])
-
-
-
-    # return render_template('result.html',
-    #                        x=int(original_number),y=int(new_number),result=result)
-
+    original_number = format(request.form['original'])
+    new_number = format(request.form['new'])
     return redirect(url_for('results', x=original_number,y=new_number))
 
+
+def format(num):
+    try:
+        # only return an int if there is no decimal in the number
+        return int(num)
+    except ValueError:
+        # if there is a decimal in the number then return the floating point
+        return float(num)
 
 @app.route('/results/<x>/<y>')
 
 
 def results(x, y):
-    x = float(x)
-    y = float(y)
 
-    result_unf = float((y-x)/(x))
+
+    result_unformatted = float((float(y)-float(x))/float(x))
+    x = format(x)
+    y = format(y)
 
     # response =  "The percent change between " + str(original_number) + " and " + str(new_number) + " is " + str("{:.2%}".format(result))
-    result = str("{:.2%}".format(result_unf))
-    return render_template('results.html', x=int(x),y=int(y),result=result)
+
+    # xx.xx% formatted string of percent change
+    result = str("{:.2%}".format(result_unformatted))
+
+
+    return render_template('results.html', x=x,y=y,result=result)
 
 @app.errorhandler(404)
 def page_not_found(e):
