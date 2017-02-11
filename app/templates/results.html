@@ -6,8 +6,10 @@
 
 {% if result == "0.00%" %}
   <p> These numbers are the same so the percent change is 0% </p>
+{% elif '-' not in result %}
+  <p>The percent change between {{ x }} and {{ y }} is {{ result }} increase. </p>
 {% else %}
-  <p>The percent change between {{ x }} and {{ y }} is {{ result }}</p>
+  <p>The percent change between {{ x }} and {{ y }} is {{ result[1:] }} decrease. </p>
 {% endif %}
   <h3> Original Number</h3>
 
