@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/entry" method="POST">
+
 <!-- {{ response }} -->
 
-
+<h2>Results</h2>
 {% if result == "0.00%" %}
   <p> These numbers are the same so the percent change is 0% </p>
 <!-- if the percentage change is not 0.00 and is not negative -->
@@ -15,6 +15,7 @@
   <!-- print out the result percentage without the - sign in front -->
   <p>The percent change between {{ x }} and {{ y }} is an {{ result[1:] }} decrease. </p>
 {% endif %}
+<!-- <form action="/entry" method="POST">
   <h3> Original Number</h3>
 
 <input name="original" type="number" min="1" step="any" required>
@@ -24,7 +25,7 @@
 <input name="new" type="number" min="1" step="any" required>
 <br>
 <input type="submit" value="Calculate">
-</form>
+</form> -->
 
 
 {% endblock %}

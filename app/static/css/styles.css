@@ -1,8 +1,36 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: aqua;
+  background-color: #daefef;
+  /*margin: auto;
+  width: 50%;*/
+  /*text-align: center;*/
+  padding-top: 5em;
+}
+.h1, h1 {
+    font-size: 40px;
+}
+
+h1, footer{
   margin: auto;
   width: 50%;
   text-align: center;
-  padding-top: 5em;
+
+}
+
+footer {
+  margin-top: 2em;
+}
+
+
+
+
+form {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    margin-top: 1em;
 }
