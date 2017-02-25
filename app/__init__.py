@@ -24,7 +24,10 @@ def format(num):
         # if there is a decimal in the number then return the floating point
         return float(num)
 
-@app.route('/results/<x>/<y>')
+@app.route('/results/<int:x>/<int:y>')
+@app.route('/results/<int:x>/<float:y>')
+@app.route('/results/<float:x>/<int:y>')
+@app.route('/results/<float:x>/<float:y>')
 
 
 def results(x, y):
